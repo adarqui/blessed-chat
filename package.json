@@ -1,0 +1,31 @@
+{
+  "name": "blessed-chat",
+  "preferGlobal": false,
+  "version": "0.0.1",
+  "author": "adarqui",
+  "description": "An IRC/hipchat client written in node.js",
+  "contributors": [
+    {
+      "name": "andrew darqui",
+      "email": "andrew.darqui@gmail.com"
+    }
+  ],
+  "keywords": [
+    "cli",
+    "http",
+    "json",
+    "hipchat",
+    "blessed"
+  ],
+  "dependencies" : {
+    "underscore" : "~1.5.2",
+    "async" : "~0.2.9",
+    "blessed" : "~0.0.25",
+    "node-stringprep" : "~0.1.8",
+    "wobot" : "git://github.com/adarqui/wobot.git#adarqui-modifications"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.10"
+  }
+}
