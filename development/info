@@ -1,0 +1,100 @@
+tiny spec
+
+
+input pane:
+
+		/ : indicates a command
+		/win : switch to 'next' pane
+		/win <arg>: switch to win (0-X) or (label)
+		/win kill : kills the current window
+		/msg <user> <text> : message a user
+		/join <room> : join a room
+		/part : part current room
+		/part <room> : part a specific room
+		/exec <command> : exec command and print output to screen
+		/exec -o <command> : exec command and pipe output to current window
+		/exec -o -m <room> <command>
+		/query : turn off current query (if it exists)
+		/query <nick/room> : send all input text to nick/room	
+		/quit : disconnect from hipchat
+		/clear : clear's output for current room or private message chat	
+		/clear <room or chat>
+		/settings : show's settings
+		/rooms
+		/users
+		/logging : show's whether logging is on or off
+		/logging on
+		/logging off
+		<tab> : go to "next" pane
+
+
+
+ui:
+
+		left pane : rooms
+		top pane : title
+		right pane : users
+		middle pane : room or user chat
+		bottom pane : input
+
+ux:
+
+		clicking (hitting enter) on nick: will open up a center window for messaging that user
+
+				load up previous pm chat
+
+		clicking (hitting enter) on room: will open up a center window for talking in that room
+
+				load up topic
+				load up previous room chat
+
+		joining a room (or /win <room/user/number>):
+
+				creates a pane (if it doesn't exist)
+				puts it 'on top'
+				fills the users pane with users only in this room
+				prepends * in front of the room in the rooms pane
+				changes the topic
+
+
+		parting a room:
+
+				removes the pane (pop's it)
+				puts the one 'below it' on top
+				restores new pane's users
+				*'s the room
+
+		messaging a user (or receiving a message from a user):
+
+				creates a pane if it doesn't exist
+						puts it on top
+						empties right users pane (only consists of user we're chatting)	
+						* the user
+						remove the * from the rooms pane
+						makes title 'now chatting with user'
+
+				else if pane already exists
+						add message to pane
+
+		
+
+		user joins or parts a channel
+
+				add/remove user from users pane
+
+
+functionality:
+
+		auto re-join
+		auto re-connect
+
+
+		everything themeable regarding colors
+		ability to auto jp2a images into an images folder
+		pm notifications
+		@mentions
+
+
+		support for IRC
+
+				translation/generic layer
