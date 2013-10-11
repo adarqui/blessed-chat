@@ -22,7 +22,8 @@
     "async" : "~0.2.9",
     "blessed" : "~0.0.25",
     "node-stringprep" : "~0.1.8",
-    "wobot" : "git://github.com/adarqui/wobot.git#adarqui-modifications"
+    "wobot" : "git://github.com/adarqui/wobot.git#adarqui-modifications",
+    "irc" : "~0.3.6"
   },
   "license": "MIT",
   "engines": {
