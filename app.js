@@ -3,11 +3,11 @@
  */
 
 var
-  Input = require('./lib/input.js'),
-  Rooms = require('./lib/rooms.js'),
-  Users = require('./lib/users.js'),
-  Title = require('./lib/title.js'),
-  Chat = require('./lib/chat.js'),
+  Input = require('./lib/Input.js'),
+  Rooms = require('./lib/Rooms.js'),
+  Users = require('./lib/Users.js'),
+  Title = require('./lib/Title.js'),
+  Chat = require('./lib/Chat.js'),
   wobot = require('wobot'),
   irc = require('irc'),
   blessed = require('blessed'),
