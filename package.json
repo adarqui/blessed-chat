@@ -23,7 +23,8 @@
     "blessed" : "~0.0.25",
     "node-stringprep" : "~0.1.8",
     "wobot" : "git://github.com/adarqui/wobot.git#adarqui-modifications",
-    "irc" : "~0.3.6"
+    "irc" : "~0.3.6",
+    "underscore" : "~1.5.2"
   },
   "license": "MIT",
   "engines": {

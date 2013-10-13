@@ -9,26 +9,69 @@ var
   Users = require('./lib/Users.js'),
   Title = require('./lib/Title.js'),
   Chat = require('./lib/Chat.js'),
+  Irc = require('./lib/IRC.js'),
+  Hipchat = require('./lib/Hipchat.js'),
+  Misc = require('./lib/Misc.js'),
   wobot = require('wobot'),
   irc = require('irc'),
   blessed = require('blessed'),
-  fs = require('fs');
+  fs = require('fs'),
+  events = require('events'),
+  _ = require('underscore');
 
 
-var c = require('./config.js');
+var c;
 
 var init = {
-  input : function() {
+  configs : function() {
+    if(process.env['CONF']) {
+      c = require(process.env['CONF'])
+    } else {
+      c = require('./config.js')
+    }
+
+    if(process.env['LAYOUT']) {
+      c.layout = require(process.env['LAYOUT'])
+    } else {
+      c.layout = require('./layout.js')
+    }
+  },
+  eventEmitter : function() {
+    c.ev = new events.EventEmitter()
+  },
+  parseServers : function() {
+    c.irc = []
+    c.hipchat = []
+    _.each(c, function(value,key,list) {
+      switch(value.type) {
+        case 'irc': {
+          console.log("irc")
+          var irc = new Irc(value)
+          c.irc.push(irc)
+          break;
+        }
+        case 'hipchat' : {
+          var hipchat = new Hipchat(value)
+          c.hipchat.push(hipchat)
+          break;
+        }
+        default : break;
+      }
+    })
   },
   everything : function() {
+    init.configs()
+    init.eventEmitter()
+    /*
     screen = new Screen(c)
-    console.log(Screen)
     input = new Input(c)
     rooms = new Rooms(c)
     users = new Users(c)
     title = new Title(c)
     chat = new Chat(c)
     screen.render()
+    */
+    init.parseServers()
   }
 }
 

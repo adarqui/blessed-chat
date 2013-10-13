@@ -1,49 +1,19 @@
 module.exports = {
-  layout : {
-    input : {
-      border : {
-        type : 'line',
-        fg : '#ffffff',
-      },
-      fg : 'white',
-      bg : 'black',
-      hoverEffects : {
-        bg : 'green'
-      },
-    },
-    rooms : {
-      border : {
-        type : 'line'
-      },
-      top : 'left',
-      fg : 'blue',
-      selectedBg : 'green',
-      title : 'rooms',
-    },
-    users : {
-      border : {
-        type : 'line',
-      },
-      top : 'right',
-      fg : 'blue',
-      selectedBg : 'green',
-      title : 'users',
-    },
-    title : {
-      border : {
-        type : 'line',
-      },
-      fg : 'white',
-      bg : 'magenta',
-      hoverEffects : {
-        bg : 'green'
-      }
-    },
-    chat : {
-      border : {
-        type : 'line',
-        color : '#00ff00',
-      },
-    },
-  }
+  efnet : {
+    type : 'irc',
+    /*
+    servers : [ 'irc.teksavvy.ca', 'irc.prison.net' ],
+    nicks : [ 'blessed', 'riot' ],
+    channels : [ '#jumping' ],
+    */
+   servers : [ '192.168.1.116' ],
+   nicks : [ 'x' ],
+   channels : [ '#sec' ]
+  },
+  hipchat : {
+    type : 'hipchat',
+  },
+  whatever : {
+    type : 'whatever',
+  },
 }
