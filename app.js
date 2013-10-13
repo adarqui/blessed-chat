@@ -3,6 +3,7 @@
  */
 
 var
+  Screen = require('./lib/Screen.js'),
   Input = require('./lib/Input.js'),
   Rooms = require('./lib/Rooms.js'),
   Users = require('./lib/Users.js'),
@@ -20,13 +21,14 @@ var init = {
   input : function() {
   },
   everything : function() {
-    console.log(Input)
-    c.input = new Input(c)
-    c.rooms = new Rooms(c)
-    c.users = new Users(c)
-    c.title = new Title(c)
-    c.chat = new Chat(c)
-    setInterval(function() { } , 2000)
+    screen = new Screen(c)
+    console.log(Screen)
+    input = new Input(c)
+    rooms = new Rooms(c)
+    users = new Users(c)
+    title = new Title(c)
+    chat = new Chat(c)
+    screen.render()
   }
 }
 
