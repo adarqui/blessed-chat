@@ -39,5 +39,11 @@ module.exports = {
         bg : 'green'
       }
     },
+    chat : {
+      border : {
+        type : 'line',
+        color : '#00ff00',
+      },
+    },
   }
 }
