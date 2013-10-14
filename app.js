@@ -20,14 +20,14 @@ var
   _ = require('underscore');
 
 
-var c;
+var c = {};
 
 var init = {
   configs : function() {
     if(process.env['CONF']) {
-      c = require(process.env['CONF'])
+      c.chats = require(process.env['CONF'])
     } else {
-      c = require('./config.js')
+      c.chats = require('./config.js')
     }
 
     if(process.env['LAYOUT']) {
@@ -42,7 +42,8 @@ var init = {
   parseServers : function() {
     c.irc = []
     c.hipchat = []
-    _.each(c, function(value,key,list) {
+    _.each(c.chats, function(value,key,list) {
+      console.log("key", key, value)
       switch(value.type) {
         case 'irc': {
           console.log("irc")
@@ -51,6 +52,7 @@ var init = {
           break;
         }
         case 'hipchat' : {
+          console.log("hipchat")
           var hipchat = new Hipchat(value)
           c.hipchat.push(hipchat)
           break;
@@ -62,7 +64,6 @@ var init = {
   everything : function() {
     init.configs()
     init.eventEmitter()
-    /*
     screen = new Screen(c)
     input = new Input(c)
     rooms = new Rooms(c)
@@ -70,7 +71,6 @@ var init = {
     title = new Title(c)
     chat = new Chat(c)
     screen.render()
-    */
     init.parseServers()
   }
 }
