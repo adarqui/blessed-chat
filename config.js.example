@@ -1,0 +1,19 @@
+module.exports = {
+  efnet : {
+    type : 'irc',
+    servers : [ '192.168.1.116' ],
+    nicks : [ 'x' ],
+    channels : [ '#test' ]
+  },
+  hipchat : {
+    type : 'hipchat',
+    jid : 'XXXXX_YYYYYYY@chat.hipchat.com',
+    password : 'TESTPW',
+    debug : false,
+    host : 'chat.hipchat.com',
+    mucHost : 'conf.hipchat.com',
+  },
+  whatever : {
+    type : 'whatever',
+  }
+}
