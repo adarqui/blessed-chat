@@ -1,0 +1,50 @@
+adding Data object to hipchat/irc
+
+add the hello world command/reply to this also.. 
+
+data goes to:
+
+	the current convo
+	a new convo
+	the default window
+
+12/21 todo:
+
+	load panes (hipchat/irc):
+
+		rooms -> gets list of rooms, * next to current room
+		topic -> topic gets set with current room's topic
+		users -> list users in that room
+		chat -> load chat history for that room
+
+			-> including error'ed commands etc
+
+		add /use, reload last current convo when you use /use... loadConvo
+
+		join/part room/user (convo)
+		message room/user (convo)
+
+		default text goes to current room/user (convo)
+
+		emit events with all new 'data'
+
+			-> have a listener store in redis
+
+	command history for up/down
+	
+
+
+12/22
+
+	Get topics loaded..
+
+	make sure you use 'line objects' when saving to the various chat arrays
+
+	send vim saved input as multiple lines
+
+	create line obj
+
+		add to convos/default/blessed default
+		add to redis for the specific convo
+
+	need an ez way of talking in the default views, without having to join

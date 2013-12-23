@@ -24,7 +24,8 @@
     "node-stringprep" : "~0.1.8",
     "wobot" : "git://github.com/adarqui/wobot.git#adarqui-modifications",
     "irc" : "~0.3.6",
-    "underscore" : "~1.5.2"
+    "underscore" : "~1.5.2",
+	"winston" : "*"
   },
   "license": "MIT",
   "engines": {
